@@ -211,6 +211,9 @@ class Pickup:
             return self.source_optic.surface_group.get_thickness(
                 self.source_surface_idx
             )
+        if self.attr_type == "coefficients":
+            return self.optic.surface_group.surfaces[self.source_surface_idx].geometry.coefficients
+
 
         # Generic path support
         try:
@@ -235,6 +238,8 @@ class Pickup:
             return
         elif self.attr_type == "thickness":
             self.optic.set_thickness(value, self.target_surface_idx)
+        elif self.attr_type == "coefficients":
+            self.optic.surface_group.surfaces[self.target_surface_idx].geometry.coefficients = value
             return
 
         # Generic path support
