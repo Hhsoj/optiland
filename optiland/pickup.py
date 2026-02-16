@@ -9,6 +9,8 @@ It also supports generic pickups between arbitrary attributes of any
 Optic instance.
 
 Kramer Harrison, 2024
+
+Adding more pickup terms
 """
 
 from __future__ import annotations
